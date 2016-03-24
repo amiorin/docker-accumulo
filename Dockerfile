@@ -10,7 +10,7 @@ ENV HADOOP_YARN_HOME=/usr/hdp/current/hadoop-yarn-client
 ENV HADOOP_LIBEXEC_DIR=/usr/hdp/current/hadoop-client/libexec
 ENV CONSUL_VERSION=0.5.2
 ENV CONSUL_TEMPLATE_VERSION=0.9.0
-ENV ACCUMULO_VERSION=1.7.0
+ENV ACCUMULO_VERSION=1.7.1
 
 ENV REFRESHED_AT 2015-06-08
 
@@ -30,10 +30,10 @@ RUN mkdir -p /data1/hdfs /data1/mapred /data1/yarn /var/log/hadoop /var/log/hado
     chmod 775 /var/log/hadoop; chgrp hadoop /var/log/hadoop; \
     cd /usr/sbin; \
     curl -L https://github.com/hashicorp/consul-template/releases/download/v${CONSUL_TEMPLATE_VERSION}/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.tar.gz | tar xz --no-same-owner --strip-components=1 && \
-    curl -L https://dl.bintray.com/mitchellh/consul/${CONSUL_VERSION}_linux_amd64.zip -o /tmp/c.zip && \
-    curl -L https://dl.bintray.com/mitchellh/consul/${CONSUL_VERSION}_web_ui.zip -o /tmp/ui.zip && \
+    curl -L https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip -o /tmp/c.zip && \
+    curl -L https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_web_ui.zip -o /tmp/ui.zip && \
     unzip /tmp/c.zip -d /usr/sbin && \
-    unzip /tmp/ui.zip -d /var/lib/consul/ui 
+    unzip /tmp/ui.zip -d /var/lib/consul/ui
 
 COPY config/accumulo /var/lib/accumulo/conf/
 
