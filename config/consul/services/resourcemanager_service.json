@@ -3,14 +3,7 @@
     {
       "id": "resourcemanager",
       "name": "resourcemanager",
-      "port": 8088,
-      "check": {
-        "id": "Datanode http service",
-        "http": "http://localhost:8088",
-        "interval": "10s",
-        "timeout": "1s"
-      }
+      "port": 8088
     }
   ]
 }
-

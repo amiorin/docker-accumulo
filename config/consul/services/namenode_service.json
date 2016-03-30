@@ -3,14 +3,7 @@
     {
       "id": "namenode",
       "name": "namenode",
-      "port": 50070,
-      "check": {
-        "id": "namenode http service",
-        "http": "http://localhost:50070",
-        "interval": "10s",
-        "timeout": "1s"
-      }
+      "port": 50070
     }
   ]
 }
-

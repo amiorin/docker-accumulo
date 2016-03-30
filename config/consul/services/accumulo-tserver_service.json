@@ -4,14 +4,7 @@
       "id": "accumulo-tserver",
       "name": "accumulo-tserver",
       "checks": [
-        {
-          "id": "tablet server process jps check",
-          "script": "/etc/consul/checkscripts/accumulo-tserver",
-          "interval": "10s",
-          "timeout": "1s"
-        }
       ]
     }
   ]
 }
-
